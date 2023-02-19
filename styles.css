@@ -3,11 +3,17 @@ body {
   background-color: #011F3F;
 }
 
+a {
+  text-decoration: none;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
   color: #FEF2BF;
+  background-color: #011F3F;
+  border: none;
 }
 
 .container {

@@ -33,15 +33,16 @@ function startGame() {
   gameOver = false;
 
   nextLevel();
-  nextSeq();
+  nextSeq(500);
 }
 
 //Functions
 function playSound(id) {
 
-  buttonAnimation(id);
   var sound = new Audio("sounds/" + id + ".mp3");
-  sound.play();  
+  sound.play(); 
+  
+  buttonAnimation(id);
 }
 
 function validatePattern() {
@@ -51,7 +52,7 @@ function validatePattern() {
     if (userPattern.length - 1 === gamePattern.length - 1) {
 
       nextLevel();
-      nextSeq();
+      nextSeq(1500);
     } 
 
   } else {
@@ -68,7 +69,7 @@ function nextLevel() {
 }
 
 
-function nextSeq() {
+function nextSeq(delay) {
 
   setTimeout(() => {
     let nextSeq = Math.floor(Math.random() * 4);
@@ -76,7 +77,7 @@ function nextSeq() {
   
     gamePattern.push(randomButton);
     playSound(randomButton);       
-  }, 1500);
+  }, delay);
 }
 
 function buttonAnimation(id) {
