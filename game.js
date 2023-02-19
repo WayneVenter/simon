@@ -6,7 +6,7 @@ var levelCount = 0;
 var buttons = ["green","red","yellow","blue"]
 
 //Event listeners
-$(document).on("keypress", (e) => {
+$("#level-title").on("click", (e) => {
 
   if (!gameStarted || gameOver === true) {
     startGame();
@@ -51,11 +51,7 @@ function validatePattern() {
     if (userPattern.length - 1 === gamePattern.length - 1) {
 
       nextLevel();
-
-      setTimeout(() => {
-        nextSeq();
-      }, 1500);
-       
+      nextSeq();
     } 
 
   } else {
@@ -74,11 +70,13 @@ function nextLevel() {
 
 function nextSeq() {
 
-  let nextSeq = Math.floor(Math.random() * 4);
-  let randomButton = buttons[nextSeq];
-
-  gamePattern.push(randomButton);
-  playSound(randomButton);
+  setTimeout(() => {
+    let nextSeq = Math.floor(Math.random() * 4);
+    let randomButton = buttons[nextSeq];
+  
+    gamePattern.push(randomButton);
+    playSound(randomButton);       
+  }, 1500);
 }
 
 function buttonAnimation(id) {
