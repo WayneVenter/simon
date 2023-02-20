@@ -33,7 +33,7 @@ function startGame() {
   gameOver = false;
 
   nextLevel();
-  nextSeq(500);
+  setTimeout(nextSeq, 500);
 }
 
 //Functions
@@ -52,7 +52,7 @@ function validatePattern() {
     if (userPattern.length - 1 === gamePattern.length - 1) {
 
       nextLevel();
-      nextSeq(1500);
+      playSeq();
     } 
 
   } else {
@@ -69,15 +69,13 @@ function nextLevel() {
 }
 
 
-function nextSeq(delay) {
+function nextSeq() {
 
-  setTimeout(() => {
-    let nextSeq = Math.floor(Math.random() * 4);
-    let randomButton = buttons[nextSeq];
-  
-    gamePattern.push(randomButton);
-    playSound(randomButton);       
-  }, delay);
+  let nextSeq = Math.floor(Math.random() * 4);
+  let randomButton = buttons[nextSeq];
+
+  gamePattern.push(randomButton);
+  playSound(randomButton);    
 }
 
 function buttonAnimation(id) {
@@ -103,6 +101,37 @@ function setGameOver() {
   }, 100);
 
   //Reset Game
-  $("#level-title").text("Game Over, Press Any Key to Restart");
+  $("#level-title").text("Game Over, Press here to Restart");
   gameOver = true;
 }
+
+async function playSeq() {
+
+  for (var k = 0; k < gamePattern.length; k++) {
+
+    var id  = gamePattern[k];
+    await callPlaySound(playSound, id, 1000);
+  }
+
+  await callNextSeq(nextSeq, 1000);
+}
+
+async function callPlaySound(func ,id, dur) {
+
+  await wait(dur);
+  func(id);
+}
+
+async function callNextSeq(func, dur) {
+
+  await wait(dur);
+  func();
+}
+
+// Simply forces the async operation to wait for a set duration
+function wait(duration){
+  return new Promise(resolve => setTimeout(resolve, duration));
+}
+
+
+ 
