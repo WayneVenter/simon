@@ -65,7 +65,8 @@ function nextLevel() {
   userPattern = [];
   levelCount++;
 
-  $("#level-title").text("Level " + levelCount);
+  $("#level-title").text("Go!");
+  $("#level-circle").text(levelCount);
 }
 
 
@@ -80,10 +81,12 @@ function nextSeq() {
 
 function buttonAnimation(id) {
 
-  $("#" + id).addClass("pressed");
+  let pressClass = "btn-" + id + "-pressed";
+
+  $("#" + id).addClass(pressClass);
 
   setTimeout(() => {
-    $("#" + id).removeClass("pressed");
+    $("#" + id).removeClass(pressClass);
   }, 100);
 }
 
@@ -107,13 +110,21 @@ function setGameOver() {
 
 async function playSeq() {
 
-  for (var k = 0; k < gamePattern.length; k++) {
+  if(!gameOver){
 
-    var id  = gamePattern[k];
-    await callPlaySound(playSound, id, 1000);
+    $("#level-title").text("Next sequence");
+
+    for (var k = 0; k < gamePattern.length; k++) {
+  
+      var id  = gamePattern[k];
+      await callPlaySound(playSound, id, 1000);
+    }
+  
+    await callNextSeq(nextSeq, 1000);
+  
+    $("#level-title").text("Go!");
+
   }
-
-  await callNextSeq(nextSeq, 1000);
 }
 
 async function callPlaySound(func ,id, dur) {
