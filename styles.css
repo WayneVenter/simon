@@ -44,7 +44,7 @@ a {
 .circle h1 {
   font-family: 'Games', sans-serif;
   font-size: 7rem;
-  line-height: 40px; 
+  line-height: 50px; 
   color: #F8F0E3;  
   text-shadow: 2px 2px grey;
   padding-right: 20px;
@@ -74,10 +74,16 @@ a {
 }
 
 .btn-red-pressed {
+  background-color: #ffa7a7;
+  background-image: -webkit-linear-gradient(top, #ffa7a7, #8a2525);
+  background-image: -moz-linear-gradient(top, #ffa7a7, #8a2525);
+  background-image: -ms-linear-gradient(top, #ffa7a7, #8a2525);
+  background-image: -o-linear-gradient(top, #ffa7a7, #8a2525);
+  background-image: linear-gradient(to bottom, #ffa7a7, #8a2525);
   -webkit-box-shadow: 0px 0px 30px #ff0000;
   -moz-box-shadow: 0px 0px 30px #ff0000;
   box-shadow: 0px 0px 30px #ff0000; 
-  transform: scale(0.96);
+  transform: scale(0.90);
 }
 
 .btn-blue {
@@ -96,11 +102,17 @@ a {
 }
 
 .btn-blue-pressed {
+  background-color: #aef3ff;  
+  background-image: -webkit-linear-gradient(top, #aef3ff, #045d7d);
+  background-image: -moz-linear-gradient(top, #aef3ff, #045d7d);
+  background-image: -ms-linear-gradient(top, #aef3ff, #045d7d);
+  background-image: -o-linear-gradient(top, #aef3ff, #045d7d);
+  background-image: linear-gradient(to bottom, #aef3ff, #045d7d);
   -webkit-box-shadow: 0px 0px 30px #049db8;
   -moz-box-shadow: 0px 0px 30px #049db8;
   box-shadow: 0px 0px 30px #049db8;
   border-width: 3px; 
-  transform: scale(0.96);
+  transform: scale(0.90);
 }
 
 .btn-green {
@@ -119,11 +131,17 @@ a {
 }
 
 .btn-green-pressed {
+  background-color: #a6ffa1;  
+  background-image: -webkit-linear-gradient(top, #a6ffa1, #07781e);
+  background-image: -moz-linear-gradient(top, #a6ffa1, #07781e);
+  background-image: -ms-linear-gradient(top, #a6ffa1, #07781e);
+  background-image: -o-linear-gradient(top, #a6ffa1, #07781e);
+  background-image: linear-gradient(to bottom, #a6ffa1, #07781e);
   -webkit-box-shadow: 0px 0px 30px #00b31b;
   -moz-box-shadow: 0px 0px 30px #00b31b;
   box-shadow: 0px 0px 30px #00b31b;
   border-width: 3px; 
-  transform: scale(0.96);
+  transform: scale(0.90);
 }
 
 .btn-yellow {
@@ -142,10 +160,16 @@ a {
 }
 
 .btn-yellow-pressed {
+  background-color: #ffff91;  
+  background-image: -webkit-linear-gradient(top, #ffff91, #767a00);
+  background-image: -moz-linear-gradient(top, #ffff91, #767a00);
+  background-image: -ms-linear-gradient(top, #ffff91, #767a00);
+  background-image: -o-linear-gradient(top, #ffff91, #767a00);
+  background-image: linear-gradient(to bottom, #ffff91, #767a00);
   -webkit-box-shadow: 0px 0px 30px #adb300;
   -moz-box-shadow: 0px 0px 30px #adb300;
   box-shadow: 0px 0px 30px #adb300; 
   border-width: 3px; 
-  transform: scale(0.96);
+  transform: scale(0.90);
 }
 

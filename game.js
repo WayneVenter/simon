@@ -4,6 +4,7 @@ var gamePattern = [];
 var userPattern = [];
 var levelCount = 0;
 var buttons = ["green","red","yellow","blue"]
+var seqInProgress = false;
 
 //Event listeners
 $("#level-title").on("click", (e) => {
@@ -15,7 +16,7 @@ $("#level-title").on("click", (e) => {
 
 $(".btn").on("click", (e) => {
 
-  if (gameStarted) {
+  if (gameStarted && !seqInProgress) {
 
     var id = e.target.id;
 
@@ -52,7 +53,7 @@ function validatePattern() {
     if (userPattern.length - 1 === gamePattern.length - 1) {
 
       nextLevel();
-      playSeq();
+      setTimeout(playSeq, 500);
     } 
 
   } else {
@@ -112,6 +113,8 @@ async function playSeq() {
 
   if(!gameOver){
 
+
+    seqInProgress = true;
     $("#level-title").text("Next sequence");
 
     for (var k = 0; k < gamePattern.length; k++) {
@@ -122,6 +125,7 @@ async function playSeq() {
   
     await callNextSeq(nextSeq, 1000);
   
+    seqInProgress = false
     $("#level-title").text("Go!");
 
   }
