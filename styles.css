@@ -10,7 +10,7 @@ a {
 
 #level-title {
   font-family: 'Games', sans-serif;
-  font-size: 3rem;
+  font-size: 5rem;
   margin:  5%;
   color: #F8F0E3;
   background-color: #011F3F;
@@ -32,8 +32,8 @@ a {
 
 .circle {
   position: absolute;
-  width: 5rem;
-  height: 5rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   background-color: black;
   border: solid #F8F0E3 4px;
@@ -43,16 +43,17 @@ a {
 
 .circle h1 {
   font-family: 'Games', sans-serif;
-  font-size: 2.8rem;
-  line-height: 20px; 
+  font-size: 7rem;
+  line-height: 40px; 
   color: #F8F0E3;  
   text-shadow: 2px 2px grey;
+  padding-right: 20px;
 }
 
 .btn{
   display: block;
-  width: 8rem;
-  height: 8rem;
+  width: 20rem;
+  height: 20rem;
   margin-bottom: 0.3rem;
   margin-right: 0.3rem;
 }
